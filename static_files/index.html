@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Email App</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="src/js/main.js"></script>
+  </head>
+  <body>
+    <div class="tab-container"> 
+        <button class="tab" onclick="changeTab(event, 'Email')"> Email </button>
+        <button class="tab" onclick="changeTab(event, 'About')"> About </button>
+    </div>
+    <form id="emailFormID" action="/api/email" method="POST">
+        <div> do email stuff </div>
+        <textarea id="address" required rows="1" cols="100"></textarea>
+        <textarea id="message" required rows="10" cols="100"></textarea>
+        <input type="submit" value="Send">
+    </form>
+    
+
+    <div id="About" class="tab-content">
+        <div> do about stuff </div>
+    </div>
+  </body>
+</html>
