@@ -33,7 +33,7 @@ $(function(){
         var posting = $.post( url, {address: $('#address').val(), message: $('#message').val()});
 
         posting.done(function( data ) {
-            alert(data);
+            alert(data.message);
         })
     });
 });

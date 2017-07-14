@@ -29,3 +29,7 @@ div.tab-container button.active {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+#address {
+    display: block;
+}
