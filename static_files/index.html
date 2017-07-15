@@ -3,26 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <title>Email App</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
     <link rel="stylesheet" href="src/css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="src/js/main.js"></script>
   </head>
   <body>
-    <div class="tab-container"> 
-        <button class="tab" onclick="changeTab(event, 'Email')"> Email </button>
-        <button class="tab" onclick="changeTab(event, 'About')"> About </button>
-    </div>
-    <form id="emailFormID" action="/api/email" method="POST">
-        <div>Adress: </div>
-        <textarea id="address" required rows="1" cols="100"></textarea>
-        <div>Message: </div>
-        <textarea id="message" required rows="10" cols="100"></textarea>
-        <input type="submit" value="Send">
-    </form>
-    
+    <div class="page-wrapper">
+      <div class="tab-container"> 
+          <button id="Email" class="tab" onclick="changeTab(event, 'email-form')"> Email </button>
+          <button id="About" class="tab" onclick="changeTab(event, 'app-info')"> About </button>
+      </div>
+      <div class="msg-success-banner hidden"> Message sent successfully! </div>
+      <div class="msg-failure-banner hidden"> Message failed to send. Please check the address and try again. </div>
+      <form action="/api/email" method="POST" class="tab-content email-form">
+          <div class="entryLabel">Address: </div>
+          <input type="text" id="address" required placeholder="something@example.com"></input>
+          <div class="entryLabel" >Message: </div>
+          <textarea id="message" required rows="10" cols="100" placeholder="Say something"></textarea>
+          <input type="submit" class="submit-email-button pure-button pure-button-primary" value="Send">
+      </form>
+      
 
-    <div id="About" class="tab-content">
-        <div> do about stuff </div>
+      <div class="tab-content app-info hidden">
+        <div class="app-info-label"> Author: </div>
+        <div class="app-info-details"> John Wilkinson </div>
+        <div class="app-info-label"> Application version: </div>
+        <div class="app-info-details"> 1.0 </div>
+        <a href="https://github.com/jwilkinsondev"> My GitHub account.</a>
+      </div>
     </div>
   </body>
 </html>

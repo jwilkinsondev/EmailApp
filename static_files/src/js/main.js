@@ -1,31 +1,27 @@
-function changeTab(event, tabName){
-    var i;
-    var tabLinks;
-    var tabsContent;
-    var tabLinksCount;
-    var tabsContentCount;
-
-    tabsContent = document.getElementsByClassName("tab-content");
-    tabsContentCount = tabsContent.length;
-    // hide the tabs
-    for(i = 0; i < tabsContentCount; i++){
-        tabsContent[i].style.display = "none";
-    }
-
-    tabLinks = document.getElementsByClassName("tab");
-    tabLinksCount = tabLinks.length;
-    // remove any 'active' classes
-    for(i = 0; i < tabLinksCount; i++){
-        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
-    }
+function changeTab(event, classToDisplay){
+    // hide all tab contents
+    $(".tab-content").addClass("hidden")
+    // make sure nothing is marked as active
+    $(".tab").removeClass("active")
 
     // show the new current tab and content
-    document.getElementById(tabName).style.display = "block";
     event.currentTarget.className += " active";
+    // show the selected tab content
+    $("." + classToDisplay).removeClass("hidden");
+
+    // make sure the success/fail banners are hidden
+    $(".msg-success-banner").addClass("hidden");
+    $(".msg-failure-banner").addClass("hidden");
 }
 
+// intercept the submit and make sure it gets handled by the express server.
 $(function(){
-    $("#emailFormID").submit(function(event) {
+    $(".email-form").submit(function(event) {
+
+        // make sure to hide any banners that are still visible from previous messages
+        $(".msg-success-banner").addClass("hidden");
+        $(".msg-failure-banner").addClass("hidden");
+
         event.preventDefault();
         var $emailForm = $( this );
         var url = $emailForm.attr( 'action' );
@@ -33,7 +29,13 @@ $(function(){
         var posting = $.post( url, {address: $('#address').val(), message: $('#message').val()});
 
         posting.done(function( data ) {
-            alert(data.message);
+            if(data.wasSuccessful){
+                $(".msg-success-banner").removeClass("hidden");
+            }
+            else{
+                $(".msg-failure-banner").removeClass("hidden");
+            }
+            console.log(data.message);
         })
     });
 });

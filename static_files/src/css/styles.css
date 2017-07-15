@@ -1,8 +1,13 @@
+body {
+    background-color: #2F2933;
+    color: #2F2933;
+}
 
 div.tab-container {
+    background-color: #29D9C2;
+    color: #2F2933;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    margin-bottom: 2em;
 }
 
 div.tab-container button {
@@ -16,20 +21,102 @@ div.tab-container button {
 }
 
 div.tab-container button:hover {
-    background-color: #ddd;
+    background-color: #01A2A6;
+    border: 2px solid #F3F3EE;
 }
 
 div.tab-container button.active {
-    background-color: #ccc;
+    color: #F3F3EE;
+    background-color: #01A2A6;
+    border: 2px solid #F3F3EE;
 }
 
-.tab-content{
+.tab-content {
+    display: block;
+}
+
+.hidden {
     display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+}
+
+.page-wrapper {
+    padding: 2em;
+    background-color: #01A2A6;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 10em;
 }
 
 #address {
+    width: 100%;
+    background-color: #F3F3EE;
+    outline: none;
+    color: #2F2933;
     display: block;
+    box-sizing: border-box;
+}
+
+#message {
+    background-color: #F3F3EE;
+    color: #2F2933;
+    outline: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.email-form:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form .submit-email-button {
+    margin-top: .5em;
+    float: right;
+    background-color: #BDF271;
+    color: #2F2933;
+}
+
+form .entryLabel {
+    color: #F3F3EE;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-weight: bold;
+}
+
+.tab-content.app-info div {
+    color: #F3F3EE;
+}
+
+.tab-content.app-info .app-info-label {
+    
+    padding-top: .5em;
+    font-weight: bold;
+}
+
+.tab-content.app-info .app-info-details {
+    padding-top: .5em;
+    padding-left: 1em;
+}
+
+.tab-content.app-info a {
+    padding-top: .5em;
+    display: block;
+}
+
+.page-wrapper .msg-success-banner {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    background-color: #BDF271;
+    color: #2F2933;
+}
+
+.page-wrapper .msg-failure-banner {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    background-color: #FFFFA6;
+    color: #2F2933;
 }
