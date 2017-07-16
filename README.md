@@ -27,3 +27,12 @@ Paste in the appropriate info for your accounts and save the file.
 2. Run npm install
 3. Run npm start
 4. Navigate to http://localhost:8080/
+
+### Testing ###
+Both the address and message fields will force the user for input.
+
+If a bad email address is entered, the application will handle it gracefully and let the user know that the address needs fixed.
+Aditionally, if neither service can deliver to the email, the app will display the same message.
+
+To test the automatic failure, you can put in a bad api key for mailgun or try to send an email to a email that you haven't authorized. 
+The service will error and automatically use Sendgrid as a backup.
