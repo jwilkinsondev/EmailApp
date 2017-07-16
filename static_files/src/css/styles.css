@@ -31,40 +31,6 @@ div.tab-container button.active {
     border: 2px solid #F3F3EE;
 }
 
-.tab-content {
-    display: block;
-}
-
-.hidden {
-    display: none;
-}
-
-.page-wrapper {
-    padding: 2em;
-    background-color: #01A2A6;
-    width: 800px;
-    margin: 0 auto;
-    margin-top: 10em;
-}
-
-#address {
-    width: 100%;
-    background-color: #F3F3EE;
-    outline: none;
-    color: #2F2933;
-    display: block;
-    box-sizing: border-box;
-}
-
-#message {
-    background-color: #F3F3EE;
-    color: #2F2933;
-    outline: none;
-    resize: none;
-    width: 100%;
-    box-sizing: border-box;
-}
-
 .email-form:after {
     content: "";
     display: table;
@@ -83,6 +49,38 @@ form .entryLabel {
     padding-top: .5em;
     padding-bottom: .5em;
     font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+.page-wrapper {
+    padding: 2em;
+    background-color: #01A2A6;
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 10em;
+}
+
+.page-wrapper .msg-success-banner {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    background-color: #BDF271;
+    color: #2F2933;
+}
+
+.page-wrapper .msg-failure-banner {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    background-color: #FFFFA6;
+    color: #2F2933;
+}
+
+.tab-content {
+    display: block;
 }
 
 .tab-content.app-info div {
@@ -105,18 +103,20 @@ form .entryLabel {
     display: block;
 }
 
-.page-wrapper .msg-success-banner {
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    background-color: #BDF271;
+#address {
+    width: 100%;
+    background-color: #F3F3EE;
+    outline: none;
     color: #2F2933;
+    display: block;
+    box-sizing: border-box;
 }
 
-.page-wrapper .msg-failure-banner {
-    padding-top: 1em;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    background-color: #FFFFA6;
+#message {
+    background-color: #F3F3EE;
     color: #2F2933;
+    outline: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
 }
